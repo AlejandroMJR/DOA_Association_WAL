@@ -64,7 +64,6 @@ The script will generate and save audio files to verify everything is working as
 
     For example:
     - `1node_to1source.wav` should mainly contain the signal from `1source.wav` as received and processed by node 1.
-    - Some combinations may not be present due to missed detections by the system.
 
 ---
 
