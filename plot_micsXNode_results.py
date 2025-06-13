@@ -34,7 +34,7 @@ labels_source = []
 
 for j, source in enumerate(numSources):
     for i, snr in enumerate(noisePowers):
-        label_noise = fr"$L_{{\text{{noise}}}} = {snr} $dB SPL"
+        label_noise = fr"$L_{{\mathrm{{noise}}}} = {snr}\,\mathrm{{dB\,SPL}}$"
 
         # Plot the data with lines and markers for the data points
         line, = plt.plot(micsPerNode, mean_rca[:, i, j],
@@ -60,6 +60,7 @@ plt.ylabel('RCA(%)', fontsize=18)
 #plt.title("(a)", fontsize=18)
 plt.ylim(0, 100)
 #plt.text(7.8, 2, "(a)", fontsize=18)
+plt.grid(True, linestyle='--', alpha=0.7)
 plt.savefig(f"Results/Figures/RCA vs M.pdf", format='pdf', dpi=1000)
 plt.show()
 
@@ -75,7 +76,7 @@ labels_source = []
 
 for j, source in enumerate(numSources):
     for i, snr in enumerate(noisePowers):
-        label_noise = fr"$L_{{\text{{noise}}}} = {snr} $dB SPL"
+        label_noise = fr"$L_{{\mathrm{{noise}}}} = {snr}\,\mathrm{{dB\,SPL}}$"
 
         # Plot the data with lines and markers for the data points
         line, = plt.plot(micsPerNode, mean_rcpa[:, i, j],
@@ -101,14 +102,7 @@ plt.ylabel('RCPA(%)', fontsize=18)
 #plt.title("(b)", fontsize=18)
 plt.ylim(0, 100)
 #plt.text(7.8, 2, "(b)", fontsize=18)
+plt.grid(True, linestyle='--', alpha=0.7)
 plt.savefig(f"Results/Figures/RCPA vs M.pdf", format='pdf', dpi=1000)
 
 plt.show()
-
-
-
-
-
-
-
-

@@ -39,7 +39,7 @@ labels_source = []
 
 for j, source in enumerate(numSources):
     for i, snr in enumerate(noisePowers):
-        label_noise = fr"$L_{{\text{{noise}}}} = {snr} $dB SPL"
+        label_noise = fr"$L_{{\mathrm{{noise}}}} = {snr}\,\mathrm{{dB\,SPL}}$"
 
         # Plot the data with lines and markers for the data points
         line, = plt.plot(doaErrors, mean_rca[:, i, j],
@@ -63,6 +63,7 @@ plt.xlabel(r"DOA estimation error, $\sigma_{\eta}$ ($^{\circ}$)", fontsize=18)
 plt.ylabel('RCA(%)', fontsize=18)
 #plt.text(5.8, 2, "(a)", fontsize=18)
 plt.ylim(0, 100)
+plt.grid(True, linestyle='--', alpha=0.7)
 plt.savefig(f"Results/Figures/RCA vs DOA Error.pdf", format='pdf', dpi=1000)
 plt.show()
 
@@ -78,8 +79,7 @@ labels_source = []
 
 for j, source in enumerate(numSources):
     for i, snr in enumerate(noisePowers):
-        label_noise = fr"$L_{{\text{{noise}}}} = {snr} $dB SPL"
-
+        label_noise = fr"$L_{{\mathrm{{noise}}}} = {snr}\,\mathrm{{dB\,SPL}}$"
         # Plot the data with lines and markers for the data points
         line, = plt.plot(doaErrors, mean_rcpa[:, i, j],
                          linestyle='-' if source == 3 else '--', color=palette[i], marker='o')
@@ -103,6 +103,8 @@ plt.xlabel(r"DOA estimation error, $\sigma_{\eta}$ ($^{\circ}$)", fontsize=18)
 plt.ylabel('RCPA(%)', fontsize=18)
 #plt.text(5.8, 2, "(b)", fontsize=18)
 plt.ylim(0, 100)
+plt.grid(True, linestyle='--', alpha=0.7)
+
 plt.savefig(f"Results/Figures/RCPA vs DOA Error.pdf", format='pdf', dpi=1000)
 plt.show()
 
